@@ -17,7 +17,8 @@ gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'compass-rails', github: 'Compass/compass-rails'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
