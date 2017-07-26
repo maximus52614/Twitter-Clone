@@ -1,4 +1,11 @@
 <div class='tweet-box'
-  <p><b><%= tweet.user.username %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago</b></p>
+  <p>
+    <b>
+      <%= tweet.user.username %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago
+    </b>
+    <% if current_user.id == tweet.user.id %>
+    | <%= link_to "Delete", tweet, method: :delete %>
+    <% end %>
+  </p>
   <p><%= tweet.content %></p>
 </div>
