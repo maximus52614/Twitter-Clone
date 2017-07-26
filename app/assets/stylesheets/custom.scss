@@ -4,10 +4,6 @@
 @import "compass/reset";
 @import "compass/css3/box-sizing";
 
-/* background */
-
-$background-position: center;
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -95,12 +91,13 @@ footer {
   color: #777;
 }
 
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
+footer {
+  > a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
 }
 
 footer small {
@@ -169,4 +166,43 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+/* body-background */
+
+body
+{
+  // font-family: tahoma, sans-serif;
+  font-size: 18px;
+  // background-color: #4B7399;
+  width: 100%;
+  // color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+#content
+{
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.post {
+  padding: 5px 20px 5px 20px;
+  background-color: #ffffff;
+  margin: 20px 0 20px 0;
+  color: #000000;
+}
+
+.navbar-inverse {
+  &.-custom {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.tweet-box {
+  border-bottom: 0.5px solid gray;
+  border-bottom-width: thin;
 }

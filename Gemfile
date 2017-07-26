@@ -10,12 +10,14 @@ end
 gem 'rails', '~> 5.1.2'
 gem 'devise', '~> 4.2'
 gem 'jquery-rails'
+gem 'haml'
 gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt',         '3.1.11'
 gem 'faker',          '1.7.3'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'compass-rails', github: 'Compass/compass-rails'
+gem 'record_tag_helper'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production

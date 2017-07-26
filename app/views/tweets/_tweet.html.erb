@@ -1,0 +1,4 @@
+<div class='tweet-box'
+  <p><b><%= current_user.username %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago</b></p>
+  <p><%= tweet.content %></p>
+</div>
