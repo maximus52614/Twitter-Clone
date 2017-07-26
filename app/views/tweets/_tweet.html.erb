@@ -1,11 +1,9 @@
-<div class='tweet-box'
-  <p>
-    <b>
-      <%= tweet.user.username %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago
-    </b>
-    <% if current_user.id == tweet.user.id %>
-    | <%= link_to "Delete", tweet, method: :delete %>
-    <% end %>
-  </p>
-  <p><%= tweet.content %></p>
+<div class='list-group center'>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">
+        <%= tweet.user.username %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago
+      </h4>
+      <p class="list-group-item-text">
+        <%= tweet.content %></p>
+    </a>
 </div>

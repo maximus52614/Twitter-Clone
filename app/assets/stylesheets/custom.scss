@@ -205,16 +205,33 @@ body
   }
 }
 
-.tweet-box {
+// .tweet-box {
+//   border-bottom: 0.5px solid gray;
+//   border-bottom-width: thin;
+//   color: black;
+// }
+.list-group {
   border-bottom: 0.5px solid gray;
   border-bottom-width: thin;
-  color: black;
+  background-color: gray-medium-light;
+  word-wrap: break-word;
+  // width: 120%;
+  // display: inline-block;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 .tweets-container {
   text-align: center;
-  width: 50%;
+  width: 25%;
   margin: auto;
+}
+
+.tweet-form {
+  width: 33%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 30px;
 }
 
 // ._center {

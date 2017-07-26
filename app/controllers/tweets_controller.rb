@@ -25,6 +25,10 @@ class TweetsController < ApplicationController
     @tweet.destroy
     redirect_to tweets_path
   end
+
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
   # private
   #   def tweet_params
   #     params.require(:tweet).permit(:content)
