@@ -18,6 +18,7 @@ gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'record_tag_helper'
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production

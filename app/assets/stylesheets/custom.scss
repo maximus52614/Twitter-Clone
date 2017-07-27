@@ -216,6 +216,11 @@ body
   border-bottom-width: thin;
   background-color: gray-medium-light;
   word-wrap: break-word;
+  &.userdetails {
+    color: blue;
+    width: 30%;
+    margin: auto;
+  }
 }
 
 .tweets-container {

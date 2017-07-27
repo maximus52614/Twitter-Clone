@@ -7,6 +7,14 @@ GIT
       sass-rails (< 5.1)
       sprockets (< 4.0)
 
+GIT
+  remote: https://github.com/tcocca/acts_as_follower.git
+  revision: c5ac7b9601c4af01eb4d9112330b27be4d694ecc
+  branch: master
+  specs:
+    acts_as_follower (0.2.1)
+      activerecord (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -226,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_follower!
   bcrypt (= 3.1.11)
   bootstrap-sass (= 3.3.7)
   bootstrap-will_paginate (= 1.0.0)

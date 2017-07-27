@@ -1,0 +1,27 @@
+<ul class="list-group userdetails">
+  <li class="list-group-item"><%= @user.first_name %>
+    <%= @user.last_name %></li>
+  <li class="list-group-item"><%= @user.username %></li>
+  <li class="list-group-item"><%= @user.created_at.to_s(:long) %></li>
+</ul>
+
+
+<% if !current_user.following?(@user) %>
+  <%= link_to "Follow", user_follow_path(@user.username), method: :post, class: "btn btn-default navbar-btn" %>
+<% else %>
+  <%= link_to "Unfollow", user_follow_path(@user.username), method: :delete, class: "btn btn-default navbar-btn" %>
+  <div class="tweets-container">
+    <% @user.tweets.each do |tweet| %>
+    <div class='list-group'>
+      <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+          <%= link_to tweet.user.username, user_path(tweet.user) %> | Tweeted <%= time_ago_in_words(tweet.created_at) %> ago
+        </h4>
+        <p class="list-group-item-text">
+          <%= tweet.content %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
