@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resource :follow, only: [:create, :destroy]
   end
   resources :tweets
+  resources :posts
 end
