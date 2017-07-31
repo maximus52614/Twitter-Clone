@@ -11,4 +11,5 @@ class Follow < ActiveRecord::Base
     self.update_attribute(:blocked, true)
   end
 
+  belongs_to :user
 end
