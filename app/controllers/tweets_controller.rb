@@ -1,10 +1,8 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all.order(created_at: :desc)
-    # @tweet = Tweet.new
-    respond_to do |format|
-      format.html
-    end
+    @tweets =  Tweet.where(user_id: feed_user_ids).includes(:user).order(created_at: :desc)
+                  #  .collect{|u| u.tweets.paginate(:page => params[:page])}
+                  #  .flatten
   end
 
   def create
@@ -24,6 +22,12 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @tweet.destroy
     redirect_to tweets_path
+  end
+
+  private
+
+  def feed_user_ids
+    current_user.following_users.ids << current_user.id
   end
 
   # def show

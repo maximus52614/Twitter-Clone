@@ -3,9 +3,4 @@ class Find < ActiveRecord::Base
     where("username LIKE ?", "%#{search}%")
     where("content LIKE ?", "%#{search}%")
   end
-
-  Class Post < ActiveRecord::Base
-   belongs_to :user
-   scope :subscribed, ->(followers) { where user_id: followers }
-  end
 end

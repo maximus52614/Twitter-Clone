@@ -1,4 +1,16 @@
 class Tweet < ApplicationRecord
   belongs_to :user
-  validates_length_of :content, :minimum => 0, :maximum => 150, :allow_blank => false
+  validates :content,
+    length: { maximum: 150 },
+    presence: true
+
+  before_save :delete_whitespaces
+
+private
+
+  def delete_whitespaces
+    self.content = self.content.strip
+     unless self.content.nil?
+     end
+  end
 end

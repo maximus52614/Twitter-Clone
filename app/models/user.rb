@@ -8,9 +8,7 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_followable
 
-  Class User < ActiveRecord::Base
-   has_many :posts
+  def tweet_feed
 
-   has_many :subscribed, class_name: "Relationship", foreign_key: "followed_id"
-   has_many :followers, class_name: "Relationship", foreign_key: "follower_id"
+  end
 end
