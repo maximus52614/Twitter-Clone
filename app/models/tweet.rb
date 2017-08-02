@@ -10,7 +10,5 @@ private
 
   def delete_whitespaces
     self.content = self.content.strip
-     unless self.content.nil?
-     end
   end
 end

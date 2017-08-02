@@ -8,14 +8,13 @@ class TweetsController < ApplicationController
   def create
     # @tweet = Tweet.new(tweet_params.merge(user_id: current_user.id))
     @tweet = Tweet.create(content: params[:content], user_id: current_user.id)
-    respond_to do |format|
       if @tweet.save
-        format.html { redirect_to tweets_path }
+        redirect_to tweets_path,
+          notice: "Tweet success!"
       else
-        flash[:notice] = "Failed to Tweet!"
-        format.html { redirect_to tweets_path }
+         redirect_to tweets_path,
+          notice: @tweet.errors.full_messages.to_sentence
       end
-    end
   end
 
   def destroy
