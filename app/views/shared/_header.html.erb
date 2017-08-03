@@ -23,7 +23,7 @@
             <%= current_user.username %><b class="caret"></b>
           </a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li><%= link_to "Profile" %></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Settings" %></li>
             <li class="divider"></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>

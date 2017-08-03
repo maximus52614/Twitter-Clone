@@ -4,6 +4,7 @@
   <li class="list-group-item"><%= @user.username %></li>
   <li class="list-group-item"><%= @user.created_at.to_s(:long) %></li>
 </ul>
+  <li><%= link_to "Update", edit_user_path(current_user) %></li>
 
 <% unless current_user == @user %>
   <% if !current_user.following?(@user) %>
