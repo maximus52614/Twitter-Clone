@@ -1,0 +1,27 @@
+%body
+  %header.navbar.navbar-inverse.-custom
+    .centered.clearfix
+      .footer-logo
+      .footer-navigation
+        .footer-links-holder
+          %center
+            %h3
+              %a{:href => ""} Guetter
+          %ul.footer-links
+            %center
+              %li
+                = link_to "Home", root_path
+                | #{link_to "Contact"} | #{link_to "About"} | #{link_to "Valar Morghulis"}
+      .footer-contact
+        %center
+          %h3 Contact Us
+          %p
+            %a{href: "Email:"} Guetter@gmail.com
+            |
+            %a{href: "tel:"} 123-456-789
+      .bottom-bar
+        %center
+          All Rights Reserved © 2017 |
+          %a{href: ""} Privacy Policy
+          |
+          %a{href: ""} Terms of Service

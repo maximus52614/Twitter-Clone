@@ -1,0 +1,8 @@
+.list-group
+  .list-group-item
+    %h4.list-group-item-heading
+      / <haml_loud> link_to tweet.user.username </haml_loud> | Tweeted <haml_loud> time_ago_in_words(tweet.created_at) </haml_loud>
+      = link_to tweet.user.username, user_path(tweet.user)
+      | Tweeted #{time_ago_in_words(tweet.created_at)} ago
+    %p.list-group-item-text
+      = tweet.content

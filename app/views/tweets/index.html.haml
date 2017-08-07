@@ -1,13 +1,10 @@
-<%= render partial: "content_form" %>
-<div class="tweets-container">
-  <%= render partial: @tweets %>
-</div>
-
-<script>
+= render partial: "content_form"
+.tweets-container
+  = render partial: @tweets
+:javascript
   $('#textarea').keypress(function(e){
     if(e.which == 13){
       e.preventDefault()
       $(this).closest('form').submit();
     }
   });
-</script>
