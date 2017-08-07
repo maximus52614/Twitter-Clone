@@ -21,5 +21,8 @@
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
+
+      <ul><%= link_to "Don't have an Account?", new_user_registration_path %></ul>
+      <ul><%= link_to "Forgot your password?", new_user_password_path %></ul>
     <% end %>
 <% end %>
