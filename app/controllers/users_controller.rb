@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
+  before_action :find_user, except: :index
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   # def update
@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   # end
 
   def edit
+  end
+
+  private
+
+  def find_user
     @user = User.find(params[:id])
   end
 end

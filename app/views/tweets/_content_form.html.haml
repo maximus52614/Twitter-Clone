@@ -1,5 +1,5 @@
 .tweet-form
-  = form_tag(:controller => "tweets", :action => "create") do
-    = text_area_tag(:content, nil, :size => "44x6", placeholder: "What's on your mind?", id: "textarea")
+  = form_tag(controller: "tweets", action: "create") do
+    = text_area_tag(:content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea")
     %br/
     = submit_tag("Tweet", class: "pull-right")

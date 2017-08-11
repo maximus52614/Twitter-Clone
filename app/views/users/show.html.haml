@@ -1,11 +1,10 @@
 %ul.list-group.userdetails
-  %li.list-group-item= @user.first_name= @user.last_name
-  %li.list-group-item= @user.username
+  %li.list-group-item= "#{@user.first_name} #{@user.last_name}"
   %li.list-group-item= @user.created_at.to_s(:long)
 -# %button.btn.btn-default{:type => "button"}
 -#   = link_to "Update", edit_user_path(current_user)
 - if current_user == @user
-  %button.btn.btn-default{:type => "button"}
+  %button.btn.btn-default{type: "button"}
     = link_to "Update", edit_user_path(current_user)
 - unless current_user == @user
   - if !current_user.following?(@user)

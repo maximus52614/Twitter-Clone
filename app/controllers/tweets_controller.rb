@@ -1,8 +1,8 @@
 class TweetsController < ApplicationController
   def index
-    @tweets =  Tweet.where(user_id: feed_user_ids).includes(:user).order(created_at: :desc)
-                  #  .collect{|u| u.tweets.paginate(:page => params[:page])}
-                  #  .flatten
+    @tweets =  Tweet.where(user_id: feed_user_ids)
+                    .includes(:user)
+                    .order(created_at: :desc)
   end
 
   def create

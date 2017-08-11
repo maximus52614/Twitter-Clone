@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-    def index
-      @user = User
-        .where("username LIKE ?", "%#{search_params[:search]}%").first
-        redirect_to user_path(@user)
+  def index
+    @user = search
+    redirect_to user_path(@user)
   end
 
   private
@@ -15,5 +14,6 @@ class PostsController < ApplicationController
     User
       .where("username LIKE ?", "%#{search_params[:search]}%")
       .where("content LIKE ?", "%#{search_params[:search]}%")
+      .first
   end
 end

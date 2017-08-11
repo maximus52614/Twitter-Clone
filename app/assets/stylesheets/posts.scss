@@ -1,3 +1,33 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .tweet-box {
+//   border-bottom: 0.5px solid gray;
+//   border-bottom-width: thin;
+//   color: black;
+// }
+.list-group {
+  border-bottom: 0.5px solid gray;
+  border-bottom-width: thin;
+  background-color: gray-medium-light;
+  word-wrap: break-word;
+  &.userdetails {
+    color: blue;
+    width: 30%;
+    margin: auto;
+  }
+}
+
+.tweets-container {
+  text-align: center;
+  width: 25%;
+  margin: auto;
+}
+
+.tweet-form {
+  width: 33%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 30px;
+}
