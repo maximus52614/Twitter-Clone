@@ -1,21 +1,50 @@
-%h2 Log in
-= form_for(User.new, as: "user", url: session_path("user")) do |f|
-  .field
-    = f.label :email
-    = f.email_field :email,
-      autofocus: true
+-# %h2 Log in
+-# = form_for(User.new, as: "user", url: session_path("user")) do |f|
+-#   .field
+-#     = f.label :email
+-#     = f.email_field :email,
+-#       autofocus: true
+-#
+-#   .field
+-#     = f.label :password
+-#     = f.password_field :password,
+-#       autocomplete: "off"
+-#
+-#   .field
+-#     = f.check_box :remember_me
+-#     = f.label :remember_me
+-#
+-#   .actions
+-#     = f.submit "Log in"
+-#
+-#   %ul= link_to "Don't have an Account?", new_user_registration_path
+-#   %ul= link_to "Forgot your password?", new_user_password_path
 
-  .field
-    = f.label :password
-    = f.password_field :password,
-      autocomplete: "off"
+.text-center{style: 'padding:50ox 0'}
+  .logo Log in
+  .login-form-1
+    #login-form.text-left
+      .login-form-main-messsage
+      .main-login-form
+        .login-group
+          .form-group
+          = form_for(User.new, as: "user", url: session_path("user")) do |f|
+            .field
+              = f.label :email
+              = f.email_field :email,
+                autofocus: true
 
-  .field
-    = f.check_box :remember_me
-    = f.label :remember_me
+            .field
+              = f.label :password
+              = f.password_field :password,
+                autocomplete: "off"
 
-  .actions
-    = f.submit "Log in"
+            .field
+              = f.check_box :remember_me
+              = f.label :remember_me
 
-  %ul= link_to "Don't have an Account?", new_user_registration_path
-  %ul= link_to "Forgot your password?", new_user_password_path
+            .actions
+              = f.submit "Log in"
+
+            %ul= link_to "Don't have an Account?", new_user_registration_path
+            %ul= link_to "Forgot your password?", new_user_password_path
