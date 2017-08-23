@@ -4,9 +4,13 @@
       / <haml_loud> link_to tweet.user.username </haml_loud> | Tweeted <haml_loud> time_ago_in_words(tweet.created_at) </haml_loud>
       = link_to tweet.user.username, user_path(tweet.user)
       | Tweeted #{time_ago_in_words(tweet.created_at)} ago
-    .dropdown
-      %button.btn.btn-secondary.dropdown-toggle
-        = link_to 'Edit', edit_tweet_path(tweet.id)
-        = link_to 'Delete', tweet, method: :delete
+    - if current_user == tweet.user
+      .dropdown
+        %button.btn.btn-secondary.dropdown-toggle
+          = link_to 'Edit', edit_tweet_path(tweet.id)
+          = link_to 'Delete', tweet, method: :delete
+        %p.list-group-item-text
+          = tweet.content
+    - else
       %p.list-group-item-text
         = tweet.content
