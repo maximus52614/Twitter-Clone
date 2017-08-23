@@ -1,3 +1,6 @@
-= render partial: "content_form"
-.tweets-container
-  = render partial: @tweets
+.container{style: "margin-top: 30px"}
+  %h2= "Welcome, #{current_user.username}"
+  .form-group
+    = render partial: "content_form"
+  .tweets-container
+    = render partial: @tweets

@@ -14,20 +14,21 @@
   word-wrap: break-word;
   &.userdetails {
     color: blue;
-    width: 30%;
+    width: 50%;
     margin: auto;
   }
 }
 
 .tweets-container {
-  text-align: center;
-  width: 25%;
+  // text-align: center;
+  width: 50%;
   margin: auto;
 }
 
 .tweet-form {
-  width: 33%;
-  text-align: center;
-  margin: auto;
+  width: 50%;
+  // text-align: center;
+  // margin: auto;
   padding-bottom: 30px;
+  position: relative;
 }

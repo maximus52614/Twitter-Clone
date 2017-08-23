@@ -1,12 +1,13 @@
-%h1 Users
-%table
- %thead
-  %th Email
-  %th Created At
- %tbody
-  -@users.each do |user|
-   %tr
-    %td
-     = user.username
-    %td
-     = user.created_at.to_s(:long)
+%ul.container.form-group
+ %h1 Users
+ %table
+  %thead
+   %th Email
+   %th Created At
+  %tbody
+   -@users.each do |user|
+    %tr
+     %td
+      = user.username
+     %td
+      = user.created_at.to_s(:long)

@@ -17,6 +17,14 @@ class FollowsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers(:id)
+    @users = User.all
+
+    response = {user: :@user, followers: @followers, users: @users}
+  end
+
   private
 
   def current_user?

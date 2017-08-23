@@ -1,42 +1,50 @@
 %h2 Edit
 = form_for(@user, as: "user", url: registration_path("user"), html: { method: :put }) do |f|
-  .field
-    = f.label :first_name
-    %br/
-    = f.text_field :first_name, autofocus: true
-  .field
-    = f.label :last_name
-    %br/
-    = f.text_field :last_name, autofocus: true
-  .field
-    = f.label :username
-    %br/
-    = f.text_field :username, autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-    - if @minimum_password_length
+  .container.form-group
+    .field
+      = f.label :first_name
       %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "off"
-  .actions
-    = f.submit "Update"
+      = f.text_field :first_name, class: 'form-control', placeholder: 'Firstname',
+       autofocus: true
+    .field
+      = f.label :last_name
+      %br/
+      = f.text_field :last_name, class: 'form-control', placeholder: 'Lastname',
+       autofocus: true
+    .field
+      = f.label :username
+      %br/
+      = f.text_field :username, class: 'form-control', placeholder: 'Username',
+       autofocus: true
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, class: 'form-control', placeholder: 'Email',
+       autofocus: true
+    .field
+      = f.label :password
+      %i (leave blank if you don't want to change it)
+      %br/
+      = f.password_field :password, class: 'form-control',
+       autocomplete: "off"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          characters minimum
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, class: 'form-control',
+       autocomplete: "off"
+    .field
+      = f.label :current_password
+      %i (we need your current password to confirm your changes)
+      %br/
+      = f.password_field :current_password, class: 'form-control', placeholder: 'Current Password',
+       autocomplete: "off"
+    .actions
+      = f.submit "Update", class: 'btn btn-success'
 %h3 Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path("user"), data: { confirm: "Are you sure?" }, method: :delete}

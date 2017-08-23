@@ -1,5 +1,22 @@
-.tweet-form
-  = form_tag(controller: "tweets", action: "create") do
-    = text_area_tag(:content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea")
-    %br/
-    = submit_tag("Tweet", class: "pull-right")
+.form-group.col-md-6
+  %ul.list-group.userdetails
+    %li.list-group-item
+      %h5= "Email: #{current_user.email}"
+    -# %li.list-group-item= "#{current_user.first_name} #{current_user.last_name}"
+    %li.list-group-item
+      %h5= "Username: #{current_user.username}"
+    -# %li.list-group-item= current_user.created_at.to_s(:long)
+  %button.btn.btn-default{type: "button"}
+    = link_to "Update", edit_user_path(current_user)
+
+  %form-group
+    %h3 Following: #{@current_user.following_users.ids.count}
+    %h3 Followers: #{@current_user.followers.count}
+
+
+.form-group.col-md-6
+  .tweet-form
+    = form_tag(controller: "tweets", action: "create") do
+      = text_area_tag(:content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea")
+      %br/
+      = submit_tag("Tweet", class: "pull-right")

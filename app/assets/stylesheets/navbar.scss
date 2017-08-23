@@ -3,7 +3,8 @@
     margin-bottom: 0;
     background-color: #2d2d30;
     border: 0;
-    font-size: 11px;
+    z-index: 9999;
+    font-size: 12px;
     letter-spacing: 4px;
     opacity:0.9;
   }
@@ -22,17 +23,29 @@
 
 /* On hover, the links will turn white */
 .navbar-nav li a:hover {
-    color: #fff !important;
-    background-color: #3FE5B5;
+  .-custom {
+    color: white;
+    background-color: white;
+  }
 }
 
 /* The active link */
 .navbar-nav li.active a {
-    color: #fff !important;
-    background-color:#29292c !important;
+  .-custom {
+    color: #fff;
+    background-color:#29292c;
+  }
 }
 
 /* Remove border color from the collapsible button */
 .navbar-default .navbar-toggle {
     border-color: transparent;
+    color: #fff
+}
+
+.nav .navbar-nav .navbar-right {
+  .-custom {
+    color: #fff;
+    background-color: #29292c;
+  }
 }
