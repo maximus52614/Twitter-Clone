@@ -6,9 +6,11 @@
       | Tweeted #{time_ago_in_words(tweet.created_at)} ago
     - if current_user == tweet.user
       .dropdown
-        %button.btn.btn-secondary.dropdown-toggle
-          = link_to 'Edit', edit_tweet_path(tweet.id)
-          = link_to 'Delete', tweet, method: :delete
+        %a#menu1.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          %b.caret
+        %ul.dropdown-menu{"aria-labelled" => "menu1", role: "menu"}
+          = button_to 'Edit', edit_tweet_path(tweet.id), method: :get, class: "btn btn-success"
+          = button_to 'Delete', tweet, method: :delete, class: "btn btn-default"
         %p.list-group-item-text
           = tweet.content
     - else

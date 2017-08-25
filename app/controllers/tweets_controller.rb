@@ -3,6 +3,8 @@ class TweetsController < ApplicationController
     @tweets =  Tweet.where(user_id: feed_user_ids)
                     .includes(:user)
                     .order(created_at: :desc)
+
+    @user = current_user
   end
 
   def create
@@ -44,6 +46,10 @@ class TweetsController < ApplicationController
   def feed_user_ids
     current_user.following_users.ids << current_user.id
   end
+
+  # def account_update_params
+  #   params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation, :current_password, :picture)
+  # end
 
 
   # def show

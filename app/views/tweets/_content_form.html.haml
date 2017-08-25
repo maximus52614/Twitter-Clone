@@ -1,16 +1,17 @@
-.form-group.col-md-6
-  %ul.list-group.userdetails
-    %li.list-group-item
-      %h5= "Email: #{current_user.email}"
-    -# %li.list-group-item= "#{current_user.first_name} #{current_user.last_name}"
-    %li.list-group-item
-      %h5= "Username: #{current_user.username}"
-    -# %li.list-group-item= current_user.created_at.to_s(:long)
-  = button_to "Update", edit_user_path(current_user), class: 'btn btn-success'
-
-  %form-group
-    %h3 Following: #{@current_user.following_users.ids.count}
-    %h3 Followers: #{@current_user.followers.count}
+.card.col-md-6{style: "width: 25rem;"}
+  = image_tag(@user.picture.url) if @user.picture?
+  .card-body
+    %ul.list-group.userdetails
+      %li.list-group-item
+        %h5= " #{current_user.username}"
+        -# %li.list-group-item= "#{current_user.first_name} #{current_user.last_name}"
+        %h5= " #{current_user.email}"
+      %li.list-group-item
+        Following: #{@current_user.following_users.ids.count}
+        Followers: #{@current_user.followers.count}
+      -# %li.list-group-item= current_user.created_at.to_s(:long)
+    %button.btn.btn-default{type: "button"}
+      = link_to "Update", edit_user_path(current_user)
 
 
 .form-group.col-md-6

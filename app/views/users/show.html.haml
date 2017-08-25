@@ -1,5 +1,7 @@
 .container{style: "margin-top: 40px"}
   %ul.list-group.userdetails
+    %div
+      = image_tag(@user.picture.url) if @user.picture?
     %li.list-group-item= "#{@user.first_name} #{@user.last_name}"
     %li.list-group-item= @user.username
     %li.list-group-item= @user.created_at.to_s(:long)

@@ -1,6 +1,6 @@
 .container{style: "margin-top: 50px"}
   = form_tag tweet_path(@tweet), method: "put" do
     .form-group
-      =text_area_tag :content, @tweet.content
+      =text_area_tag :content, @tweet.content, id: "textarea"
 
     = submit_tag "Submit Tweet", class: 'btn btn-update'

@@ -24,8 +24,8 @@ gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'record_tag_helper'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
-gem 'pg', group: :production
+# gem 'sqlite3', group: :development
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
