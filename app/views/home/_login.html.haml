@@ -20,7 +20,7 @@
 -#   %ul= link_to "Don't have an Account?", new_user_registration_path
 -#   %ul= link_to "Forgot your password?", new_user_password_path
 .container{style: "margin-top: 30px"}
-  %h2 Log In
+  %h2{style: "margin-left: 420px"} Log In
   = form_for(User.new, as: "user", url: session_path("user")) do |f|
     .container.col-md-6.col-md-offset-3
       .form-group
@@ -40,5 +40,5 @@
       .actions
         = f.submit "Log in", class: 'btn btn-success'
       %ul
-        %li= link_to "Don't have an Account?", new_user_registration_path
-        %li= link_to "Forgot your password?", new_user_password_path
+        %span= link_to "Don't have an Account?", new_user_registration_path
+        %span= link_to "Forgot your password?", new_user_password_path

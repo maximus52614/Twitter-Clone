@@ -1,8 +1,7 @@
-%h2 Edit
+%h2.col-md-offset-6{style: "margin-top: 60px"} Edit
 = form_for(@user, as: "user", url: registration_path("user"), html: { multipart: true, method: :put }) do |f|
-  .container.form-group
+  .container.form-group.col-md-6.col-md-offset-3
     .field
-      = f.file_field :picture
       = f.label :first_name
       %br/
       = f.text_field :first_name, class: 'form-control', placeholder: 'Firstname',
@@ -44,8 +43,9 @@
       %br/
       = f.password_field :current_password, class: 'form-control', placeholder: 'Current Password',
        autocomplete: "off"
+    .field
+      = f.file_field :picture
     .actions
       = f.submit "Update", class: 'btn btn-success'
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path("user"), data: { confirm: "Are you sure?" }, method: :delete}
+%p{style: "margin-left: 120px"}
+  %div.col-md-3.col-md-offset-12{style: "margin-left: 295px"} #{button_to "Cancel my account", registration_path("user"), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default"}

@@ -1,4 +1,4 @@
-.card.col-md-6{style: "width: 25rem;"}
+.card.col-md-6{style: "width: 23rem;"}
   = image_tag(@user.picture.url) if @user.picture?
   .card-body
     %ul.list-group.userdetails
@@ -10,15 +10,14 @@
         Following: #{@current_user.following_users.ids.count}
         Followers: #{@current_user.followers.count}
       -# %li.list-group-item= current_user.created_at.to_s(:long)
-    %button.btn.btn-default{type: "button"}
-      = link_to "Update", edit_user_path(current_user)
+    = link_to "Update", edit_user_path(current_user), class: "btn btn-success"
 
 
-.form-group.col-md-6
+.form-group.col-md-3.col-md-offset-3
   .tweet-form
     = form_tag(controller: "tweets", action: "create") do
       = text_area_tag(:content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea")
       %br/
-      = submit_tag("Tweet", class: "pull-right")
+      = submit_tag("Tweet", class: "pull-right", class: "btn btn-success")
 
   %div#textarea_feedback

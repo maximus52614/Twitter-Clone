@@ -1,51 +1,51 @@
-.navbar {
-  &.-custom {
-    margin-bottom: 0;
-    background-color: #2d2d30;
-    border: 0;
-    z-index: 9999;
-    font-size: 12px;
-    letter-spacing: 4px;
-    opacity:0.9;
-  }
-}
-  /* header */
-  /* Add a dark background color with a little bit see-through */
-
-// .input-group {
+// .navbar {
+//   &.-custom {
+//     margin-bottom: 0;
+//     background-color: #2d2d30;
+//     border: 0;
+//     z-index: 9999;
+//     font-size: 12px;
+//     letter-spacing: 4px;
+//     opacity:0.9;
+//   }
 // }
-/* Add a gray color to all navbar links */
-.navbar li a, .navbar .navbar-brand {
-  &.-custom {
-    color: #d5d5d5;
-  }
-}
-
-/* On hover, the links will turn white */
-.navbar-nav li a:hover {
-  .-custom {
-    color: white;
-    background-color: white;
-  }
-}
-
-/* The active link */
-.navbar-nav li.active a {
-  .-custom {
-    color: #fff;
-    background-color:#29292c;
-  }
-}
-
-/* Remove border color from the collapsible button */
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff
-}
-
-.nav .navbar-nav .navbar-right {
-  .-custom {
-    color: #fff;
-    background-color: #29292c;
-  }
-}
+//   /* header */
+//   /* Add a dark background color with a little bit see-through */
+//
+// // .input-group {
+// // }
+// /* Add a gray color to all navbar links */
+// .navbar li a, .navbar .navbar-brand {
+//   &.-custom {
+//     color: #d5d5d5;
+//   }
+// }
+//
+// /* On hover, the links will turn white */
+// .navbar-nav li a:hover {
+//   .-custom {
+//     color: white;
+//     background-color: white;
+//   }
+// }
+//
+// /* The active link */
+// .navbar-nav li.active a {
+//   .-custom {
+//     color: #fff;
+//     background-color:#29292c;
+//   }
+// }
+//
+// /* Remove border color from the collapsible button */
+// .navbar-default .navbar-toggle {
+//     border-color: transparent;
+//     color: #fff
+// }
+//
+// .nav .navbar-nav .navbar-right {
+//   .-custom {
+//     color: #fff;
+//     background-color: #29292c;
+//   }
+// }
