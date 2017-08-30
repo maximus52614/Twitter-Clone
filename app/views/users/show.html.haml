@@ -1,4 +1,4 @@
-.card.col-md-7.col-md-offset-1{style: "margin-top: 70px"}
+.card.col-md-3.col-md-offset-1{style: "margin-top: 100px"}
   = image_tag(@user.picture.url) if @user.picture?
   .card-body{style: "width: 20rem;"}
     %ul.list-group.userdetails
@@ -9,45 +9,45 @@
       %li.list-group-item
         Following: #{current_user.following_users.ids.count}
         Followers: #{current_user.followers.count}
-        .form-group.col-md-6.col-md-offset-12{style: "margin-left: 325px"}
-          .tweet-form
-            = form_tag(controller: "tweets", action: "create") do
-              = text_area_tag(:content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea")
-              %br/
-              = submit_tag("Tweet", class: "pull-right")
-  - if current_user == @user
-    .li.list-group-item{style: "margin-right: 500px"}
-      = link_to "Update", edit_user_path(current_user), method: :get, class: "btn btn-success"
-    .tweets-container.col-md-9.col-md-offset-6
+      - if current_user == @user
+        = link_to "Update", edit_user_path(current_user), method: :get, class: "btn btn-success"
+.form-group.col-md-8{style: "margin-top: 100px"}
+  .tweet-form
+    = form_tag(controller: "tweets", action: "create") do
+      = text_area_tag :content, nil, size: "44x6", placeholder: "What's on your mind?", id: "textarea"
+      %br/
+      = submit_tag "Tweet", class: 'btn btn-success'
+- if current_user == @user
+  .tweets-container.col-md-5.col-md-offset-4
+    - @user.tweets.each do |tweet|
+      %div.list-group
+        %div.list-group-item
+          %h4.list-group-item-heading
+            = link_to tweet.user.username, user_path(tweet.user)
+            "Tweeted #{time_ago_in_words(tweet.created_at)}"
+          .dropdown
+            %a#menu1.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %b.caret{style: "margin-left: 325px"}
+            %ul.dropdown-menu{"aria-labelled" => "menu1", role: "menu", style: "margin-left: 310px"}
+              = button_to 'Edit', edit_tweet_path(tweet.id), method: :get, class: "btn btn-default"
+              = button_to 'Delete', tweet, method: :delete, class: "btn btn-default"
+          %p.list-group-item-text
+            = tweet.content
+- unless current_user == @user
+  - if !current_user.following?(@user)
+    = link_to "Follow",
+      user_follow_path(@user.username),
+      method: :post, class: "btn btn-default navbar-btn"
+  - else
+    = link_to "Unfollow",
+      user_follow_path(@user.username), method: :delete,
+      class: "btn btn-default navbar-btn"
+    %div.tweets-container
       - @user.tweets.each do |tweet|
         %div.list-group
           %div.list-group-item
             %h4.list-group-item-heading
               = link_to tweet.user.username, user_path(tweet.user)
               "Tweeted #{time_ago_in_words(tweet.created_at)}"
-            .dropdown
-              %a#menu1.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                %b.caret{style: "margin-left: 325px"}
-              %ul.dropdown-menu{"aria-labelled" => "menu1", role: "menu", style: "margin-left: 310px"}
-                = button_to 'Edit', edit_tweet_path(tweet.id), method: :get, class: "btn btn-default"
-                = button_to 'Delete', tweet, method: :delete, class: "btn btn-default"
             %p.list-group-item-text
               = tweet.content
-  - unless current_user == @user
-    - if !current_user.following?(@user)
-      = link_to "Follow",
-        user_follow_path(@user.username),
-        method: :post, class: "btn btn-default navbar-btn"
-    - else
-      = link_to "Unfollow",
-        user_follow_path(@user.username), method: :delete,
-        class: "btn btn-default navbar-btn"
-      %div.tweets-container
-        - @user.tweets.each do |tweet|
-          %div.list-group
-            %div.list-group-item
-              %h4.list-group-item-heading
-                = link_to tweet.user.username, user_path(tweet.user)
-                "Tweeted #{time_ago_in_words(tweet.created_at)}"
-              %p.list-group-item-text
-                = tweet.content
